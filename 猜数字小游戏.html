@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form id="app">
+			<h1>⭐猜数字小游戏</h1>
+			请输入一个整数：<br />
+			答案是：{{da}}
+			<br />		
+			<input v-model="msg"/>
+			<input type="submit" value="提交"/>
+			<p v-if="da==msg">恭喜你猜对了！</p>
+		</form>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					da:Math.floor(Math.random()*10),
+					msg:'' 
+				}
+			})
+		</script>		
+	</body>
+</html>
